@@ -26,11 +26,25 @@
             <label for="birthday">Birthday:</label>
             <input type="date" class="form-control"  formControlName ="birth_date" id="birthday" >
         </div>
+        
         <div class="col-lg-4 mt-2" *ngIf="!getparamid" (click)="emSubmit()">
-            <button class="btn btn-primary btn-sm">Create</button>
+            <button>
+                <span>Create!</span>
+                <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
+                </svg>
+              </button>
+              
         </div>
         <div class="col-lg-4 mt-2" *ngIf="getparamid" (click)="emUpdate()">
-            <button class="btn btn-dark btn-sm">Update</button>
+            <button>
+                <span>Update!</span>
+                <svg  viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
+                </svg>
+            </button>
+        
         </div>
     </form>
 </div>
+
