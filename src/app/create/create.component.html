@@ -1,0 +1,36 @@
+<div class="container mt-5">
+
+      <div *ngIf="errormsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{errormsg}}</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{successmsg}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+    <form [formGroup]="emForm">
+        <div class="col-lg-4 mt-2">
+            <input type="text" class="form-control" formControlName ="name" placeholder="Enter your FirstName">
+        </div>
+        <div class="col-lg-4 mt-2">
+            <input type="text" class="form-control" formControlName ="last_name" placeholder="Enter your LastName">
+        </div>
+        <div class="col-lg-4 mt-2">
+            <input type="radio"  id="male" formControlName ="gender" value="male">
+            <label for="male">Male</label> &nbsp;
+            <input type="radio"  id="female" formControlName ="gender" value="female">
+            <label for="male">Female</label>
+        </div>
+        <div class="col-lg-4 mt-2">
+            <label for="birthday">Birthday:</label>
+            <input type="date" class="form-control"  formControlName ="birth_date" id="birthday" >
+        </div>
+        <div class="col-lg-4 mt-2" *ngIf="!getparamid" (click)="emSubmit()">
+            <button class="btn btn-primary btn-sm">Create</button>
+        </div>
+        <div class="col-lg-4 mt-2" *ngIf="getparamid" (click)="emUpdate()">
+            <button class="btn btn-dark btn-sm">Update</button>
+        </div>
+    </form>
+</div>
